@@ -1,0 +1,246 @@
+/*CSS reset bovenaan*/
+* {
+    margin: 0;/*verwijdert standaard marge*/
+    padding: 0;/*verwijdert standaard padding*/
+    box-sizing: border-box;/*padding en marge maakt elementen niet groter*/
+}
+
+/*BODY*/
+body {
+    font-family: 'Product Sans', 'Google Sans', sans-serif;
+    line-height: 1.6;/*regelafstand*/
+    max-width: 1200px;/*maximale breedte webpagina*/ 
+    margin: 0 auto;/*webpagina midden scherm*/
+    padding: 0 20px;/*niet strak tegen de rand*/
+}
+html {
+    scroll-behavior: smooth;/*vloeiend scrollen*/
+}
+
+/*HEADER*/
+header {
+    display: flex;/*activeert Flexbox*/
+    flex-direction: column;/*op mobiel onder elkaar*/
+    gap: 15px;/*ruimte tussen columns*/
+    position: relative;/*z-index*/
+    z-index: 100;/*headerlaag hogere waarde en ligt boven elementen*/
+    border-top: 5px solid darkolivegreen;/*bovenlijn*/
+    border-bottom: 5px solid darkolivegreen;/*onderlijn*/
+    border-radius: 8px;/*afgeronde hoeken*/
+    margin-bottom: 2rem;/*let op:negatieve marge veroorzaakt overlap op mobiel*/
+}
+header h1 {/*hoofdtitel*/
+    /*Tekst*/
+    color: whitesmoke;/*tekstkleur*/
+    font-size: 2.5rem;/*lettergrootte mobiel*/
+    font-weight: 700;/*vet*/
+    text-transform: uppercase;/*hoofdletters*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);/*schaduw*/
+    /*Afbeelding*/
+    background-image: url(img/pexels-strannik-sk-36388433.jpg);
+    width: 100%;/*volledige breedte*/
+    height: auto;/*past zich aan tekst en padding aan*/
+    display: block;/*block level element*/
+    background-size: cover;/*afbeelding vult titelbalk*/
+    background-position: center;/*gecentreerd*/
+    background-repeat: no-repeat;/*niet herhalend*/
+    padding: 2.5rem 1rem; /* Iets compacter op mobiel */
+    text-align: center;/*gecentreerd*/
+    border-radius: 8px;/*afgeronde hoeken*/
+    box-shadow: 0px 0px 15px 2px darkolivegreen;
+}
+header p { /*subtitel*/
+    font-size: 1.1rem;/*1.1x16px*/
+    font-style: italic;/*schuin*/
+    font-weight: bold;/*vet*/
+    color: darkolivegreen;/*tekstkleur*/
+    text-transform: uppercase;/*hoofdletters*/
+    text-align: center;/*gecentreerd*/
+    background-color: antiquewhite;/*achtergrondkleur*/
+    border-radius: 8px;/*afgeronde hoeken*/
+    padding: 5px;/*binnenruimte*/
+}
+header nav ul {/*website-navigatie*/
+    display: flex;/*activeert Flexbox*/
+    flex-direction: column;/*op mobiel menuknoppen onder elkaar*/
+    align-items: center;/*menuknoppen horizontaal in het midden*/
+    list-style-type: none;/*geen opsommingstekens*/
+    padding: 10px;/*binnenruimte tekst niet tegen rand*/
+    border-radius: 8px;/*afgeronde hoeken*/
+    gap: 10px;/*ruimte tussen menuknoppen*/
+    background-color: antiquewhite;/*achtergrondkleur*/
+}
+header nav a {/*links*/
+    text-decoration: none;/*geen onderstreep*/
+    color: darkolivegreen;/*tekstkleur*/
+    font-size: 1.2rem;/*lettergrootte mobiel*/
+    font-weight: bold; /*vet klikt beter op mobiel*/
+    transition: 0.5s;/*mouse-over*/
+    display: block;/*block level element*/
+    padding: 5px 0;/*binnenruimte boven/onder*/
+}
+header nav a:hover {
+    color: olive;/*mouse-over lichtere kleur*/
+    font-weight: bold;/*mouse-over vet*/
+    text-decoration: underline;/*mouse-over onderstreept*/
+}
+
+/*MAIN*/
+main {/*hoofdinhoud*/
+    display: grid;/*activeert CSS Grid*/
+    grid-template-columns: 1fr;/*1fractie op mobiel*/
+    gap: 30px;/*ruimte tussen elementen*/
+    padding: 10px 0 20px 0;/*boven, rechts, onder, links*/
+    margin-top: 20px;/*marge bovenkant*/
+}
+
+/*Feiten*/
+.deel1 {
+    color: darkolivegreen;/*tekstkleur*/
+    background-color: antiquewhite;/*achtergrondkleur*/
+    padding: 20px;/*binnenruimte*/
+    border-radius: 8px;/*afgeronde hoeken*/
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);/*3D*/
+    box-sizing: border-box;/*padding blijft binnen de breedte*/ 
+    width: 100%;/*volledige breedte*/
+}
+.deel1 ul {
+    padding-left: 10px;/*binnenruimte links*/
+    margin: 0; /*geen marges*/
+    list-style-type: none;/*geen opsommingstekens*/
+}
+.deel1 ul ul {  
+    padding-left: 2px;/*lijst-inspringen op mobiel*/
+    margin-top: 5px;/*bovenmarge*/
+    margin-bottom: 15px;/*ondermarge*/
+    list-style-type: none;/*geen opsommingstekens*/ 
+}
+
+/*Attractie*/
+.deel2 {
+    display: flex;/*activeert Flexbox*/ 
+    flex-direction: column;/*op mobiel onder elkaar*/
+    gap: 20px;/*tussenruimte*/
+}
+.deel2 > div {/*>=alleen child niveau 1, child niveau 2 en dieper niet gestyled*/
+    color: antiquewhite;/*tekstkleur*/
+    background-color: darkolivegreen;/*achtergrondkleur*/
+    padding: 20px;/*binnenruimte*/
+    border-radius: 8px;/*afgeronde hoeken*/
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);/*3D*/
+    display: flex;/*activeert Flexbox*/
+    flex-direction: column;/*op mobiel onder elkaar*/ 
+    gap: 20px;/*ruimte tussen elementen*/ 
+}
+.deel2 figure {
+    margin: 0;/*geen marge*/
+    width: 100%;/*volledige breedte*/ 
+    display: flex;/*activeert Flexbox*/ 
+    flex-direction: column;/*op mobiel onder elkaar*/
+    align-items: center;/*gecentreerd*/
+    gap: 8px;/*tussenruimte*/
+    flex-shrink: 0;/*voorkomt inkrimping op te klein mobiel scherm!*/
+}
+/*Afbeeldingen*/
+img {
+    max-width: 100%;/*meeschalen*/ 
+    height: auto;/*meeschalen*/    
+    border-radius: 4px;/*afgeronde hoeken*/
+}
+figure img {
+    max-width: 100%;/*meeschalen*/
+    height: auto;/*meeschalen*/
+    display: block;/*block level element*/
+    border-radius: 4px;/*afgeronde hoeken*/
+}
+figcaption {
+    margin-top: 8px;/*bovenmarge*/
+    font-size: 0.9em;/*lettergrootte 0.9x16px*/
+}
+
+/*FOOTER*/
+footer {
+    display: grid;/*activeert CSS Grid*/
+    grid-template-columns: 1fr;/*op mobiel onder elkaar*/
+    gap: 20px;/*tussenruimte*/
+    padding: 15px; /*binnenruimte*/
+    border-top: 5px solid darkolivegreen;/*bovenlijn*/
+    border-bottom: 5px solid darkolivegreen;/*onderlijn*/
+    border-radius: 8px;/*afgeronde hoeken*/
+    text-align: center;/*gecentreerde tekst*/
+    font-style: italic;/*schuin*/
+    color: darkolivegreen;/*tekstkleur*/
+    background-color: antiquewhite;/*achtergrondkleur*/
+}
+
+/*MEDIA-QUERY inclusief CSS Grid voor Mobile First*/
+/*!!Vanaf een scherm van 768px wordt CSS Grid geactiveerd,
+linkerkant beslaat dan 2 kolommen, rechterkant beslaat 9 kolommen,
+uiterst rechts een kolom leeg*/
+
+@media (min-width: 768px) {/*bij schermen groter dan 768px:    */
+/*HEADER*/
+    header {
+        display: grid;/*activeert CSS Grid*/
+        grid-template-columns: repeat(12, 1fr);/*12columns=1fractie=volledige breedte*/
+        margin-bottom: -1rem; /*negatieve marge verkleint*/
+    }
+
+    header h1 {
+        grid-column: span 12;/*header beslaat 12columns*/
+        font-size: 6rem; /*lettergrootte 6x16px*/ 
+        padding: 3.75rem 1.25rem;/*padding in Root EM om mee te schalen*/
+    }
+
+    header p {
+        grid-column: span 12;/*paragraaf beslaat 12columns*/
+    }
+
+    header nav {
+        grid-column: span 12;/*navigatie beslaat 12columns*/
+    }
+
+    header nav ul {
+        flex-direction: row;/*menukoppen in rij naast elkaar*/
+        justify-content: center;
+        gap: 20px;
+        padding: 15px;
+    }
+
+/*MAIN*/
+    main {
+        grid-template-columns: repeat(12, 1fr);/*12columns=1 fractie=volledige breedte*/ 
+        align-items: stretch;/*hele breedte innemen*/ 
+    }
+
+    .deel1 {
+        grid-column: span 2;/*deel1=2columns*/
+        margin-top: 0;
+    }
+
+    .deel2 {
+        grid-column: span 9;/*deel2=9columns 12e kolom leeg*/ 
+        display: flex;/*activeert Flexbox*/       
+        flex-direction: column;/*onder elkaar*/
+        gap: 20px;/*tussenruimte*/
+        height: 100%;/*volledige hoogte*/        
+    }
+
+    .deel2 > div { /* > betrekking op child niveau 1*/
+        flex: 1;/*9columns voor inhoud*/ 
+        flex-direction: row;/*tekst en afbeelding naast elkaar in een rij*/ 
+        justify-content: space-between;/*tekst links en afbeelding rechts met tussenruimte*/
+        align-items: center;/*teskt zelfde hoogte als afbeelding*/
+        margin-top: 0;/*verwijdert mobiele marges*/       
+    }
+
+    .deel2 figure {
+        width: 35%;/*afbeelding 35% en tekst 65%*/
+    }
+
+/*FOOTER*/
+    footer {
+        grid-template-columns: repeat(3, 1fr); /* Schakelt op desktop naar 3 kolommen */
+        padding: 20px;
+    }
+}
